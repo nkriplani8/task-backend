@@ -1,11 +1,10 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-
 const users = require("./routes/users");
+const blogs = require("./routes/blogs");
 
 const port = process.env.PORT || 8080;
-
 
 mongoose.connect("mongodb://localhost/blog-friends")
     .then(() => {
@@ -14,6 +13,9 @@ mongoose.connect("mongodb://localhost/blog-friends")
 
 app.use(express.json());
 app.use("/api/users/", users);
+app.use("/api/blogs/", blogs);
+
+
 
 
 

@@ -5,6 +5,8 @@ const { Blog } = require("../models/blog");
 
 var temp = [];
 
+
+
 router.get("/", async (req, res) => {
   try {
     const user = await User.find();
@@ -53,6 +55,10 @@ router.get("/:id/level/:level", async (req, res) => {
     res.send(`${error}`);
   }
 });
+
+
+
+
 
 const unique = (value, index, self) => {
   return self.indexOf(value) === index;
